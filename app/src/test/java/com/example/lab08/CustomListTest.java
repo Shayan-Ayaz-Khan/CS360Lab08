@@ -14,4 +14,17 @@ public class CustomListTest {
         assertTrue(list.hasCity(calgary));
     }
 
+    @Test
+    public void testDeleteCity() {
+        CustomList list = new CustomList();
+        City calgary = new City("Calgary", "AB");
+        list.addCity(calgary);
+
+        // The method doesn't exist yet, so this will show a red error
+        list.deleteCity(calgary);
+
+        // Check that the city is actually gone
+        assertFalse(list.hasCity(calgary));
+    }
+
 }
