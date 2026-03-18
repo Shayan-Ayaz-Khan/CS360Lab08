@@ -10,7 +10,6 @@ public class CustomListTest {
         City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
 
-        // This will fail initially because hasCity() doesn't exist
         assertTrue(list.hasCity(calgary));
     }
 
@@ -20,11 +19,21 @@ public class CustomListTest {
         City calgary = new City("Calgary", "AB");
         list.addCity(calgary);
 
-        // The method doesn't exist yet, so this will show a red error
         list.deleteCity(calgary);
 
-        // Check that the city is actually gone
         assertFalse(list.hasCity(calgary));
+    }
+
+    @Test
+    public void testCountCities() {
+        CustomList list = new CustomList();
+
+        assertEquals(0, list.countCities());
+
+        City calgary = new City("Calgary", "AB");
+        list.addCity(calgary);
+
+        assertEquals(1, list.countCities());
     }
 
 }
