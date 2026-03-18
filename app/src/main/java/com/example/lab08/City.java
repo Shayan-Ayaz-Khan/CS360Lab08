@@ -1,5 +1,6 @@
 package com.example.lab08;
 
+// making a change to test git
 public class City {
     private String city;
     private String province;
